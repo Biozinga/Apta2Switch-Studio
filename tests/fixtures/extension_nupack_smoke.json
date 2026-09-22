@@ -1,0 +1,519 @@
+{
+  "status": "completed",
+  "input": {
+    "aptamer_dna": "ACGTACGT",
+    "trigger_dna": "ACGT",
+    "target_lengths": [
+      5,
+      6
+    ],
+    "extension_lengths": [
+      1,
+      2
+    ],
+    "mode": "exhaustive_mfe_then_pair_probability_ranking",
+    "selection_scope": "independent_search_per_target_length",
+    "top_per_length": 4
+  },
+  "model": {
+    "material": "dna04",
+    "temperature_c": 37.0,
+    "sodium_m": 0.12,
+    "magnesium_m": 0.0,
+    "ensemble": "stacking",
+    "aptamer_material": "dna",
+    "trigger_material": "dna"
+  },
+  "reference": {
+    "aptamer_sequence": "ACGTACGT",
+    "trigger_sequence": "ACGT",
+    "mfe_structure": "....((((+))))",
+    "mfe_energy_kcal_mol": -5.373753070831299,
+    "ensemble_free_energy_kcal_mol": -6.380566818232482,
+    "mfe_structure_probability": 0.1952280558241014,
+    "mfe_pairs": [
+      [
+        4,
+        11
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "pair_probabilities": [
+      {
+        "reference_position_a": 5,
+        "reference_position_b": 12,
+        "aptamer_index": 5,
+        "trigger_index": 4,
+        "reference_probability": 0.428160932211
+      },
+      {
+        "reference_position_a": 6,
+        "reference_position_b": 11,
+        "aptamer_index": 6,
+        "trigger_index": 3,
+        "reference_probability": 0.547597351151
+      },
+      {
+        "reference_position_a": 7,
+        "reference_position_b": 10,
+        "aptamer_index": 7,
+        "trigger_index": 2,
+        "reference_probability": 0.543852112773
+      },
+      {
+        "reference_position_a": 8,
+        "reference_position_b": 9,
+        "aptamer_index": 8,
+        "trigger_index": 1,
+        "reference_probability": 0.251266417218
+      }
+    ],
+    "nucleotide_probabilities": [
+      0.7949494315991567,
+      0.5562006393627636,
+      0.5536492431502603,
+      0.6731723747172704,
+      0.4281609322112369,
+      0.5475973511509714,
+      0.543852112772649,
+      0.25126641721814086,
+      0.25126641721814086,
+      0.543852112772649,
+      0.5475973511509714,
+      0.4281609322112369
+    ]
+  },
+  "mfe_screen": {
+    "total_candidates_expected": 20,
+    "total_candidates_screened": 20,
+    "mfe_survivor_cap": 50000,
+    "mfe_survivor_cap_hit": false,
+    "exhaustive": true,
+    "workers": 1,
+    "by_length": [
+      {
+        "target_length": 5,
+        "extension_length": 1,
+        "total_candidates_expected": 4,
+        "total_candidates_screened": 4,
+        "mfe_best_key": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mfe_best_group_count": 4,
+        "mfe_survivors_for_ensemble": 4,
+        "mfe_survivor_cap": 50000,
+        "mfe_survivor_cap_hit": false,
+        "exhaustive": true
+      },
+      {
+        "target_length": 6,
+        "extension_length": 2,
+        "total_candidates_expected": 16,
+        "total_candidates_screened": 16,
+        "mfe_best_key": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mfe_best_group_count": 15,
+        "mfe_survivors_for_ensemble": 15,
+        "mfe_survivor_cap": 50000,
+        "mfe_survivor_cap_hit": false,
+        "exhaustive": true
+      }
+    ],
+    "mfe_best_key": null,
+    "mfe_best_group_count": 19,
+    "mfe_survivors_for_ensemble": 19,
+    "mfe_screen_seconds": 0.006,
+    "ensemble_candidates_analyzed": 19,
+    "ensemble_pass_seconds": 0.016,
+    "ensemble_complete": true,
+    "ensemble_ranking_exhaustive": true
+  },
+  "candidates": [
+    {
+      "extension_5prime": "C",
+      "extension_length": 1,
+      "trigger_length": 5,
+      "extended_trigger": "CACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -6.046059608,
+      "mfe_energy_delta": -0.672306538,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+.))))",
+      "rank": 1,
+      "final_score": 38.188650148,
+      "ensemble_free_energy_kcal_mol": -6.776829832,
+      "ensemble_free_energy_delta": -0.396263014,
+      "mfe_structure_probability": 0.305532856113,
+      "target_structure_probability": 0.305532856113,
+      "core_pair_probability_rmse": 0.027546818216,
+      "core_pair_probability_mae": 0.005671265202,
+      "reference_pair_probability_loss": 0.000151039126,
+      "extension_pair_probability_sum": 0.002841955062,
+      "extension_to_aptamer_probability_sum": 0.002841955062,
+      "extension_to_trigger_core_probability_sum": 0.0,
+      "rank_within_length": 1,
+      "reference_pairs": [
+        {
+          "reference_position_a": 5,
+          "reference_position_b": 12,
+          "aptamer_index": 5,
+          "trigger_index": 4,
+          "reference_probability": 0.428160932211,
+          "candidate_probability": 0.428009893085
+        },
+        {
+          "reference_position_a": 6,
+          "reference_position_b": 11,
+          "aptamer_index": 6,
+          "trigger_index": 3,
+          "reference_probability": 0.547597351151,
+          "candidate_probability": 0.547622307664
+        },
+        {
+          "reference_position_a": 7,
+          "reference_position_b": 10,
+          "aptamer_index": 7,
+          "trigger_index": 2,
+          "reference_probability": 0.543852112773,
+          "candidate_probability": 0.546897842963
+        },
+        {
+          "reference_position_a": 8,
+          "reference_position_b": 9,
+          "aptamer_index": 8,
+          "trigger_index": 1,
+          "reference_probability": 0.251266417218,
+          "candidate_probability": 0.393233164024
+        }
+      ],
+      "nucleotide_probabilities": [
+        0.79563463568257,
+        0.5575869304773016,
+        0.5530851757471029,
+        0.6169744843021538,
+        0.42800989308521115,
+        0.5476223076636585,
+        0.5468978429626549,
+        0.3932331640236675,
+        0.9971580449376424,
+        0.3932331640236675,
+        0.5468978429626549,
+        0.5476223076636585,
+        0.42800989308521115
+      ],
+      "extension_base_probabilities": [
+        {
+          "extension_index": 1,
+          "base": "C",
+          "paired_probability": 0.002841955062
+        }
+      ]
+    },
+    {
+      "extension_5prime": "G",
+      "extension_length": 1,
+      "trigger_length": 5,
+      "extended_trigger": "GACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -6.185835838,
+      "mfe_energy_delta": -0.812082767,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+.))))",
+      "rank": 2,
+      "final_score": 43.893059314,
+      "ensemble_free_energy_kcal_mol": -6.867795815,
+      "ensemble_free_energy_delta": -0.487228997,
+      "mfe_structure_probability": 0.330713768528,
+      "target_structure_probability": 0.330713768528,
+      "core_pair_probability_rmse": 0.032787284351,
+      "core_pair_probability_mae": 0.00770440797,
+      "reference_pair_probability_loss": 0.0,
+      "extension_pair_probability_sum": 0.002242834654,
+      "extension_to_aptamer_probability_sum": 0.002242834654,
+      "extension_to_trigger_core_probability_sum": 0.0,
+      "rank_within_length": 2,
+      "reference_pairs": [
+        {
+          "reference_position_a": 5,
+          "reference_position_b": 12,
+          "aptamer_index": 5,
+          "trigger_index": 4,
+          "reference_probability": 0.428160932211,
+          "candidate_probability": 0.436372303459
+        },
+        {
+          "reference_position_a": 6,
+          "reference_position_b": 11,
+          "aptamer_index": 6,
+          "trigger_index": 3,
+          "reference_probability": 0.547597351151,
+          "candidate_probability": 0.558363648337
+        },
+        {
+          "reference_position_a": 7,
+          "reference_position_b": 10,
+          "aptamer_index": 7,
+          "trigger_index": 2,
+          "reference_probability": 0.543852112773,
+          "candidate_probability": 0.558168222964
+        },
+        {
+          "reference_position_a": 8,
+          "reference_position_b": 9,
+          "aptamer_index": 8,
+          "trigger_index": 1,
+          "reference_probability": 0.251266417218,
+          "candidate_probability": 0.425642018469
+        }
+      ],
+      "nucleotide_probabilities": [
+        0.8005193379239387,
+        0.5674611945539622,
+        0.5643193300361431,
+        0.61839822187394,
+        0.43637230345862343,
+        0.5583636483373978,
+        0.558168222963916,
+        0.425642018468784,
+        0.997757165346103,
+        0.425642018468784,
+        0.558168222963916,
+        0.5583636483373978,
+        0.43637230345862343
+      ],
+      "extension_base_probabilities": [
+        {
+          "extension_index": 1,
+          "base": "G",
+          "paired_probability": 0.002242834654
+        }
+      ]
+    },
+    {
+      "extension_5prime": "TG",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "TGACGT",
+      "gc_fraction": 0.5,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -6.185835838,
+      "mfe_energy_delta": -0.812082767,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "rank": 3,
+      "final_score": 45.350410925,
+      "ensemble_free_energy_kcal_mol": -6.873443596,
+      "ensemble_free_energy_delta": -0.492876778,
+      "mfe_structure_probability": 0.327697048838,
+      "target_structure_probability": 0.327697048838,
+      "core_pair_probability_rmse": 0.032104676376,
+      "core_pair_probability_mae": 0.007371859289,
+      "reference_pair_probability_loss": 0.0,
+      "extension_pair_probability_sum": 0.011347101575,
+      "extension_to_aptamer_probability_sum": 0.011347101575,
+      "extension_to_trigger_core_probability_sum": 0.0,
+      "rank_within_length": 1,
+      "reference_pairs": [
+        {
+          "reference_position_a": 5,
+          "reference_position_b": 12,
+          "aptamer_index": 5,
+          "trigger_index": 4,
+          "reference_probability": 0.428160932211,
+          "candidate_probability": 0.4323944782
+        },
+        {
+          "reference_position_a": 6,
+          "reference_position_b": 11,
+          "aptamer_index": 6,
+          "trigger_index": 3,
+          "reference_probability": 0.547597351151,
+          "candidate_probability": 0.553270341761
+        },
+        {
+          "reference_position_a": 7,
+          "reference_position_b": 10,
+          "aptamer_index": 7,
+          "trigger_index": 2,
+          "reference_probability": 0.543852112773,
+          "candidate_probability": 0.553076699027
+        },
+        {
+          "reference_position_a": 8,
+          "reference_position_b": 9,
+          "aptamer_index": 8,
+          "trigger_index": 1,
+          "reference_probability": 0.251266417218,
+          "candidate_probability": 0.42175937801
+        }
+      ],
+      "nucleotide_probabilities": [
+        0.8006453676462485,
+        0.5653285664018308,
+        0.5648114132525837,
+        0.6183940275923452,
+        0.43239447819985344,
+        0.5532703417607227,
+        0.5530766990271798,
+        0.42175937800959296,
+        0.9994271039111944,
+        0.9892257945142543,
+        0.42175937800959296,
+        0.5530766990271798,
+        0.5532703417607227,
+        0.43239447819985344
+      ],
+      "extension_base_probabilities": [
+        {
+          "extension_index": 1,
+          "base": "T",
+          "paired_probability": 0.000572896089
+        },
+        {
+          "extension_index": 2,
+          "base": "G",
+          "paired_probability": 0.010774205486
+        }
+      ]
+    },
+    {
+      "extension_5prime": "AG",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "AGACGT",
+      "gc_fraction": 0.5,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -6.185835838,
+      "mfe_energy_delta": -0.812082767,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "rank": 4,
+      "final_score": 45.398737896,
+      "ensemble_free_energy_kcal_mol": -6.873544809,
+      "ensemble_free_energy_delta": -0.492977991,
+      "mfe_structure_probability": 0.327643238389,
+      "target_structure_probability": 0.327643238389,
+      "core_pair_probability_rmse": 0.032111484073,
+      "core_pair_probability_mae": 0.007366683113,
+      "reference_pair_probability_loss": 0.0,
+      "extension_pair_probability_sum": 0.011521378602,
+      "extension_to_aptamer_probability_sum": 0.011521378602,
+      "extension_to_trigger_core_probability_sum": 0.0,
+      "rank_within_length": 2,
+      "reference_pairs": [
+        {
+          "reference_position_a": 5,
+          "reference_position_b": 12,
+          "aptamer_index": 5,
+          "trigger_index": 4,
+          "reference_probability": 0.428160932211,
+          "candidate_probability": 0.432400610086
+        },
+        {
+          "reference_position_a": 6,
+          "reference_position_b": 11,
+          "aptamer_index": 6,
+          "trigger_index": 3,
+          "reference_probability": 0.547597351151,
+          "candidate_probability": 0.553278279685
+        },
+        {
+          "reference_position_a": 7,
+          "reference_position_b": 10,
+          "aptamer_index": 7,
+          "trigger_index": 2,
+          "reference_probability": 0.543852112773,
+          "candidate_probability": 0.55307688065
+        },
+        {
+          "reference_position_a": 8,
+          "reference_position_b": 9,
+          "aptamer_index": 8,
+          "trigger_index": 1,
+          "reference_probability": 0.251266417218,
+          "candidate_probability": 0.421690121782
+        }
+      ],
+      "nucleotide_probabilities": [
+        0.8007080411843349,
+        0.5652743759573211,
+        0.5647317052508192,
+        0.6180232890176326,
+        0.43240061008637287,
+        0.5532782796854299,
+        0.5530768806503011,
+        0.4216901217818281,
+        0.9991221239356941,
+        0.9893564974625441,
+        0.4216901217818281,
+        0.5530768806503011,
+        0.5532782796854299,
+        0.43240061008637287
+      ],
+      "extension_base_probabilities": [
+        {
+          "extension_index": 1,
+          "base": "A",
+          "paired_probability": 0.000877876064
+        },
+        {
+          "extension_index": 2,
+          "base": "G",
+          "paired_probability": 0.010643502537
+        }
+      ]
+    }
+  ],
+  "curves": {},
+  "warnings": [],
+  "elapsed_seconds": 0.435,
+  "run_id": "extension_nupack_smoke_fixture",
+  "started_at": "2026-09-22T15:26:15+02:00",
+  "completed_at": "2026-09-22T15:26:15+02:00",
+  "request": {
+    "molecule_name": "Système personnalisé de test"
+  },
+  "fixture_provenance": "Recorded from real NUPACK dna04 at 37 C, Na 0.12 M, Mg 0 M; ACGTACGT + ACGT; exhaustive 20 MFE sequences, 19 ensemble analyses. Retains two candidates per target length for portable UI tests."
+}

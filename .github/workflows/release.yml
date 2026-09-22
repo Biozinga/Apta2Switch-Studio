@@ -1,0 +1,106 @@
+name: Build Beta 1 applications
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    uses: ./.github/workflows/tests.yml
+
+  build:
+    needs: tests
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            script: scripts/build_macos.sh
+            artifact: Apta2Switch-Studio-macos-arm64
+            file: dist/Apta2Switch-Studio-macos-arm64.zip
+          - runner: macos-15-intel
+            script: scripts/build_macos.sh
+            artifact: Apta2Switch-Studio-macos-x64
+            file: dist/Apta2Switch-Studio-macos-x64.zip
+          - runner: ubuntu-22.04
+            script: scripts/build_linux.sh
+            artifact: Apta2Switch-Studio-linux-x64
+            file: dist/Apta2Switch-Studio-linux-x64.tar.gz
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Check release version
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os, tomllib
+          with open("pyproject.toml", "rb") as f:
+              version = tomllib.load(f)["project"]["version"]
+          expected = "v" + version.replace("b", "-beta.")
+          assert os.environ["GITHUB_REF_NAME"] == expected, (os.environ["GITHUB_REF_NAME"], expected)
+          PY
+      - name: Build and check the standalone application
+        shell: bash
+        run: bash "${{ matrix.script }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.file }}
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [tests, build]
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+      - name: Publish Beta 1 only after every application check succeeds
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          cat > "$RUNNER_TEMP/release-notes.md" <<'NOTES'
+          # Apta2Switch-Studio — Beta 1
+
+          Download the file for your computer and extract it. Open the **Apta2Switch-Studio** folder, then double-click the application inside. The interface opens in your browser. No Python installation or terminal commands are needed.
+
+          The extracted folder contains the application (**Apta2Switch-Studio.app** on Mac), **nupack**, **runs**, **START-HERE.txt**, and **LICENSE**. Keep them together and move the whole folder to a writable location such as Documents. The **runs** folder contains **designs** and **extensions** for your results.
+
+          | Computer | Download |
+          | --- | --- |
+          | Mac with Apple silicon (M1, M2, M3, M4, …) | `Apta2Switch-Studio-macos-arm64.zip` |
+          | Mac with an Intel processor | `Apta2Switch-Studio-macos-x64.zip` |
+          | Linux x64 (Ubuntu 22.04 or newer) | `Apta2Switch-Studio-linux-x64.tar.gz` |
+          | Windows | Coming later; not available in this beta. |
+
+          **NUPACK is licensed separately and is not included.** Download your matching NUPACK package from [nupack.org](https://www.nupack.org/) and follow the folder instructions in the app's **Settings**. Its Python dependencies are already included.
+
+          **First opening on macOS:** this beta is not notarized by Apple. If macOS blocks it, authorize it in **System Settings → Privacy & Security → Open Anyway**. Builds are checked on macOS 15 and Ubuntu 22.04. Other OS versions are not yet verified.
+
+          The interface is available in English and French. This prerelease supports activator toehold design, trigger extension, and saved runs. The build checks imports, PNG/Excel export, and all three main pages in both languages. Scientific calculations require your compatible NUPACK package; CI does not ship or test a licensed copy.
+          NOTES
+          gh release create "$GITHUB_REF_NAME" \
+            artifacts/Apta2Switch-Studio-macos-arm64.zip \
+            artifacts/Apta2Switch-Studio-macos-x64.zip \
+            artifacts/Apta2Switch-Studio-linux-x64.tar.gz \
+            --verify-tag --title "Beta 1" --prerelease \
+            --notes-file "$RUNNER_TEMP/release-notes.md"

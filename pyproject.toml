@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aptaswitch-studio"
+version = "0.2.1b1"
+description = "Local web studio for aptamer-triggered toehold switch design"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "AptaSwitch-Studio contributors" }
+]
+dependencies = [
+  "streamlit==1.63.0",
+  "openpyxl==3.1.5",
+  "resvg_py==0.5.0",
+  # NUPACK is supplied by the user; its Python dependencies are bundled.
+  "numpy==1.26.4",
+  "scipy>=1.11,<2",
+  "pandas>=2.2,<3",
+  "PyYAML>=6,<7",
+  "Jinja2>=3.1,<4",
+  "packaging>=24",
+]
+
+[project.optional-dependencies]
+build = [
+  "pyinstaller==6.21.0",
+  "pillow==12.3.0",
+]
+
+[project.scripts]
+aptaswitch-studio = "aptaswitch_studio.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"aptaswitch_studio.assets" = ["*.png"]

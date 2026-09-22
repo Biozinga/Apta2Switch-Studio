@@ -1,0 +1,19 @@
+Apta2Switch-Studio — Start here
+
+1. Keep this complete folder somewhere you can write, for example Documents.
+   If you move it, move the whole Apta2Switch-Studio folder.
+
+2. Double-click Apta2Switch-Studio.app on Mac, or Apta2Switch-Studio on Linux.
+   The app opens in your browser.
+   If macOS blocks the first launch, go to System Settings → Privacy & Security
+   and choose Open Anyway.
+
+3. Download NUPACK from https://www.nupack.org/downloads and extract its archive
+   into the nupack folder. In the app, open Settings → Dependencies, confirm
+   your NUPACK license, then click Validate NUPACK.
+
+Your results are saved in runs/designs and runs/extensions by default.
+Choose English or French in Settings → Language.
+
+No Python installation or terminal commands are needed.
+NUPACK is supplied separately under its own license.

@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+build/
+dist/
+*.spec~
+runs/
+*.egg-info/
+
+# User-provided NUPACK must never be committed or bundled.
+nupack/
+nupack-*/
+.local_deps/
+*.whl
+
+# Local credentials and generated archives are never published with the source.
+.env
+.env.*
+!.env.example
+*.zip
+*.tar.gz
+*.AppImage
+*.app/
