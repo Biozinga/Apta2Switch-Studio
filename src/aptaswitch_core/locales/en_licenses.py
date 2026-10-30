@@ -1,0 +1,31 @@
+"""Credits and bundled-engine interface messages."""
+
+TRANSLATIONS = {
+    "OSTIR · laboratoire Barrick et contributeurs": "OSTIR · Barrick laboratory and contributors",
+    "Estimation locale de l’initiation de traduction ; comparaison exploratoire entre l’ARN OFF et une projection ARN de l’état ON.": "Local translation-initiation estimate; exploratory comparison between OFF RNA and an RNA projection of the ON state.",
+    "OSTIR 1.1.3 : GPLv3 ou ultérieure. Les sources correspondantes et la licence accompagnent le paquet. Les conditions GPL s’appliquent à la distribution de l’intégration.": "OSTIR 1.1.3: GPLv3 or later. Corresponding source and licence accompany the package. GPL terms apply when distributing the integration.",
+    "Apta2Switch-Studio · équipe iGEM Sorbonne Université. Le code propre de cette livraison utilise la licence Apta2Switch-Studio : redistribution gratuite et attribution, y compris pour les dérivés. Les droits MIT des versions antérieures restent acquis. OSTIR conserve la GPLv3 ou ultérieure, oxDNA la GPLv3 et ViennaRNA sa licence propre.": "Apta2Switch-Studio · iGEM Sorbonne University team. This release's own code uses the Apta2Switch-Studio licence: free redistribution and attribution, including for derivatives. MIT rights granted by earlier versions remain in effect. OSTIR retains GPLv3 or later, oxDNA GPLv3, and ViennaRNA its own licence.",
+    "Licences et remerciements": "Licences and acknowledgements",
+    "Merci aux équipes qui développent et partagent ces outils et leurs travaux scientifiques.": "Thank you to the teams developing and sharing these tools and their scientific work.",
+    "Les moteurs et le modèle sont intégrés à l’application. Aucune installation ni validation manuelle n’est nécessaire.": "The engines and model are included in the application. No manual installation or validation is needed.",
+    "ViennaRNA · Université de Vienne": "ViennaRNA · University of Vienna",
+    "Repliement des brins ARN et paramètres thermodynamiques du moteur expérimental.": "RNA folding and thermodynamic parameters for the experimental engine.",
+    "Licence ViennaRNA : attribution obligatoire ; redistribution payante soumise à l’accord des auteurs.": "ViennaRNA licence: attribution required; redistribution for a fee requires the authors’ agreement.",
+    "oxDNA / oxNA · équipe oxDNA": "oxDNA / oxNA · oxDNA team",
+    "Simulation moléculaire en gros grains de l’hybridation ADN–ARN et de l’ouverture du switch.": "Coarse-grained molecular simulation of DNA–RNA hybridization and switch opening.",
+    "Licence GPLv3. Les notices et les sources correspondantes accompagnent la distribution du moteur.": "GPLv3 licence. Notices and corresponding source accompany the engine distribution.",
+    "Sugimoto et collaborateurs · Biopython": "Sugimoto and colleagues · Biopython",
+    "Paramètres thermodynamiques d’empilement des duplexes ADN–ARN, publiés en 1995 ; table issue de Biopython.": "DNA–RNA duplex stacking parameters published in 1995; table obtained from Biopython.",
+    "Table Biopython sous licence BSD à trois clauses. La publication est citée comme source scientifique.": "Biopython table under the BSD 3-Clause licence. The publication is cited as the scientific source.",
+    "3Dmol.js · Université de Pittsburgh et contributeurs": "3Dmol.js · University of Pittsburgh and contributors",
+    "Affichage interactif des conformations et des trajectoires moléculaires.": "Interactive display of molecular conformations and trajectories.",
+    "Licence BSD à trois clauses ; notices des composants incluses avec le visualiseur.": "BSD 3-Clause licence; component notices are included with the viewer.",
+    "Projet et auteurs": "Project and authors",
+    "Code et modèle": "Code and model",
+    "Biopython et licence": "Biopython and licence",
+    "Séquence codante complète · {count} nt": "Full coding sequence · {count} nt",
+    "Efface les reporters personnalisés et le dossier par défaut. Les exports ne sont pas supprimés.": "Clears custom reporters and the default folder. Exports are not deleted.",
+    "Le moteur thermodynamique intégré est indisponible. Réinstallez le paquet complet de l’application.": "The bundled thermodynamic engine is unavailable. Reinstall the complete application package.",
+    "Le modèle ARN–ARN intégré est indisponible. Réinstallez le paquet complet de l’application.": "The bundled RNA–RNA model is unavailable. Reinstall the complete application package.",
+    "Les moteurs de simulation intégrés sont indisponibles. Réinstallez le paquet complet de l’application.": "The bundled simulation engines are unavailable. Reinstall the complete application package."
+}

@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aptaswitch-studio"
+version = "0.2.1b2"
+description = "Local web studio for aptamer-triggered toehold switch design"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "LicenseRef-Apta2Switch-Source" }
+classifiers = [
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+]
+authors = [
+  { name = "AptaSwitch-Studio contributors" }
+]
+dependencies = [
+  "streamlit==1.63.0",
+  "openpyxl==3.1.5",
+  "resvg_py==0.5.0",
+  # Shared numerical arrays for thermodynamics, analysis and visualization.
+  "numpy==1.26.4",
+  # Local translation-initiation proxy; pin both model and RNA implementation.
+  "OSTIR==1.1.3",
+  "ViennaRNA==2.7.2",
+  "scipy>=1.11,<2",
+  "pandas>=2.2,<3",
+  "PyYAML>=6,<7",
+  "Jinja2>=3.1,<4",
+  "packaging>=24",
+]
+
+[project.optional-dependencies]
+build = [
+  "pyinstaller==6.21.0",
+  "pillow==12.3.0",
+]
+
+[project.scripts]
+aptaswitch-studio = "aptaswitch_studio.__main__:main"
+
+[tool.setuptools]
+license-files = ["LICENSE", "LICENSES/*", "THIRD_PARTY_NOTICES.md"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"aptaswitch_core.thermodynamics" = ["native/*.cpp", "native/*.hpp"]
+"aptaswitch_studio.assets" = ["*.png", "3dmol/*.js", "3dmol/*.txt", "3dmol/*.json"]

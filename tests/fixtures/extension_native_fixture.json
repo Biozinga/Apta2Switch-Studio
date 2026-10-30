@@ -1,0 +1,1066 @@
+{
+  "status": "completed",
+  "input": {
+    "aptamer_dna": "ACGTACGT",
+    "trigger_dna": "ACGT",
+    "target_lengths": [
+      5,
+      6
+    ],
+    "extension_lengths": [
+      1,
+      2
+    ],
+    "mode": "exhaustive_mfe_then_pair_probability_ranking",
+    "selection_scope": "independent_search_per_target_length",
+    "top_per_length": 2,
+    "extension_side": "5prime",
+    "odd_split_extra_base": null
+  },
+  "model": {
+    "material": "experimental-Sugimoto95-Vienna04-loopmean",
+    "ensemble": "connected-pseudoknot-free;dangles=0;coaxial=0;RNA-WC-GU;DNA-WC;hybrid-WC;min_loop=3;max_interior=30;pf_smooth=1;betaScale=1;RNA-monomer:ViennaRNA-2.7.2;other:connected-DP;minimum-RNA:centikcal-salt-rounded;minimum-other:continuous-PF-weights",
+    "temperature_c": 29.0,
+    "sodium_m": 0.12,
+    "magnesium_m": 0.0,
+    "aptamer_material": "dna",
+    "trigger_material": "dna"
+  },
+  "reference": {
+    "aptamer_sequence": "ACGTACGT",
+    "trigger_sequence": "ACGT",
+    "mfe_structure": "....((((+))))",
+    "mfe_energy_kcal_mol": -3.630724623172455,
+    "ensemble_free_energy_kcal_mol": -4.193879556305034,
+    "mfe_structure_probability": 0.39143740347381967,
+    "mfe_pairs": [
+      [
+        4,
+        11
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "pair_probabilities": [
+      {
+        "reference_position_a": 5,
+        "reference_position_b": 12,
+        "aptamer_index": 5,
+        "trigger_index": 4,
+        "reference_probability": 0.442223478986
+      },
+      {
+        "reference_position_a": 6,
+        "reference_position_b": 11,
+        "aptamer_index": 6,
+        "trigger_index": 3,
+        "reference_probability": 0.497986966303
+      },
+      {
+        "reference_position_a": 7,
+        "reference_position_b": 10,
+        "aptamer_index": 7,
+        "trigger_index": 2,
+        "reference_probability": 0.498195097407
+      },
+      {
+        "reference_position_a": 8,
+        "reference_position_b": 9,
+        "aptamer_index": 8,
+        "trigger_index": 1,
+        "reference_probability": 0.44364022659
+      }
+    ],
+    "nucleotide_probabilities": [
+      0.5563597734099186,
+      0.5018039848574586,
+      0.5020130336970905,
+      0.5577765210139428,
+      0.4422234789860568,
+      0.49798696630290956,
+      0.49819509740727763,
+      0.4436402265900814,
+      0.4436402265900814,
+      0.49819509740727763,
+      0.49798696630290956,
+      0.4422234789860568
+    ]
+  },
+  "mfe_screen": {
+    "total_candidates_expected": 20,
+    "total_candidates_screened": 20,
+    "mfe_survivor_cap": 50000,
+    "mfe_survivor_cap_hit": false,
+    "exhaustive": true,
+    "workers": 1,
+    "by_length": [
+      {
+        "target_length": 5,
+        "extension_length": 1,
+        "total_candidates_expected": 4,
+        "extension_5prime_length": 1,
+        "extension_3prime_length": 0,
+        "total_candidates_screened": 4,
+        "mfe_best_key": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mfe_best_group_count": 3,
+        "mfe_survivors_for_ensemble": 3,
+        "mfe_survivor_cap": 50000,
+        "mfe_survivor_cap_hit": false,
+        "exhaustive": true
+      },
+      {
+        "target_length": 6,
+        "extension_length": 2,
+        "total_candidates_expected": 16,
+        "extension_5prime_length": 2,
+        "extension_3prime_length": 0,
+        "total_candidates_screened": 16,
+        "mfe_best_key": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mfe_best_group_count": 11,
+        "mfe_survivors_for_ensemble": 11,
+        "mfe_survivor_cap": 50000,
+        "mfe_survivor_cap_hit": false,
+        "exhaustive": true
+      }
+    ],
+    "mfe_best_key": null,
+    "mfe_best_group_count": 14,
+    "mfe_survivors_for_ensemble": 14,
+    "mfe_screen_seconds": 0.107,
+    "stopped_early": false,
+    "ensemble_candidates_analyzed": 14,
+    "ensemble_pass_seconds": 0.225,
+    "ensemble_complete": true,
+    "ensemble_ranking_exhaustive": true
+  },
+  "candidates": [
+    {
+      "extension_5prime": "A",
+      "extension_length": 1,
+      "trigger_length": 5,
+      "extended_trigger": "AACGT",
+      "gc_fraction": 0.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630724623,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+.))))",
+      "extension_3prime": "",
+      "rank": 1,
+      "final_score": 19.552715675,
+      "ensemble_free_energy_kcal_mol": -4.198823475,
+      "ensemble_free_energy_delta": -0.004943918,
+      "mfe_structure_probability": 0.388227520378,
+      "target_structure_probability": 0.388227520378,
+      "core_pair_probability_rmse": 0.00094214549,
+      "core_pair_probability_mae": 0.000381239942,
+      "reference_pair_probability_loss": 0.010252163857,
+      "extension_pair_probability_sum": 0.00820024624,
+      "extension_to_aptamer_probability_sum": 0.00820024624,
+      "extension_to_trigger_core_probability_sum": 0.0,
+      "extension_side": "5prime",
+      "extension_5prime_length": 1,
+      "extension_3prime_length": 0,
+      "rank_within_length": 1,
+      "reference_pairs": [
+        {
+          "reference_position_a": 5,
+          "reference_position_b": 12,
+          "aptamer_index": 5,
+          "trigger_index": 4,
+          "reference_probability": 0.442223478986,
+          "candidate_probability": 0.440204343237
+        },
+        {
+          "reference_position_a": 6,
+          "reference_position_b": 11,
+          "aptamer_index": 6,
+          "trigger_index": 3,
+          "reference_probability": 0.497986966303,
+          "candidate_probability": 0.495713506442
+        },
+        {
+          "reference_position_a": 7,
+          "reference_position_b": 10,
+          "aptamer_index": 7,
+          "trigger_index": 2,
+          "reference_probability": 0.498195097407,
+          "candidate_probability": 0.49587348826
+        },
+        {
+          "reference_position_a": 8,
+          "reference_position_b": 9,
+          "aptamer_index": 8,
+          "trigger_index": 1,
+          "reference_probability": 0.44364022659,
+          "candidate_probability": 0.44000226749
+        }
+      ],
+      "nucleotide_probabilities": [
+        0.554565155094703,
+        0.49978041533201345,
+        0.5000234735489519,
+        0.5551608954481458,
+        0.4402043432370444,
+        0.4957135064417288,
+        0.4958734882598652,
+        0.4400022674902159,
+        0.9917997537603233,
+        0.4400022674902159,
+        0.4958734882598652,
+        0.4957135064417288,
+        0.4402043432370444
+      ],
+      "extension_base_probabilities": [
+        {
+          "extension_index": 1,
+          "base": "A",
+          "side": "5prime",
+          "trigger_index": 1,
+          "paired_probability": 0.00820024624
+        }
+      ],
+      "thermodynamics": {
+        "backend": "AptaSwitch-native-hybrid",
+        "version": "abi=1;sha256:fa5ebe6f867592e46dadd3b3afea78faa072424531103dc4e946e7ab10526761",
+        "model": "experimental-Sugimoto95-Vienna04-loopmean",
+        "parameter_digest": "sha256:98eb671acc2ce0c25470011e58303034cb3de42ac7cbf5faabe76d7188a7bde8",
+        "ensemble": "connected-pseudoknot-free;dangles=0;coaxial=0;RNA-WC-GU;DNA-WC;hybrid-WC;min_loop=3;max_interior=30;pf_smooth=1;betaScale=1;RNA-monomer:ViennaRNA-2.7.2;other:connected-DP;minimum-RNA:centikcal-salt-rounded;minimum-other:continuous-PF-weights",
+        "standard_state": "1 M;Na=0.12..1M;published-pair-S69-S75-S90;Mg=0;T=25..55C;native-salt=1.021M;association-S93;uniform-cyclic-labelled-state"
+      }
+    },
+    {
+      "extension_5prime": "AA",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "AAACGT",
+      "gc_fraction": 0.0,
+      "longest_homopolymer": 2,
+      "mfe_energy_kcal_mol": -3.630724623,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": "",
+      "rank": 2,
+      "final_score": 22.202902065,
+      "ensemble_free_energy_kcal_mol": -4.200085051,
+      "ensemble_free_energy_delta": -0.006205495,
+      "mfe_structure_probability": 0.387412654402,
+      "target_structure_probability": 0.387412654402,
+      "core_pair_probability_rmse": 0.001101485268,
+      "core_pair_probability_mae": 0.000433188156,
+      "reference_pair_probability_loss": 0.012183600672,
+      "extension_pair_probability_sum": 0.010301501623,
+      "extension_to_aptamer_probability_sum": 0.01030096532,
+      "extension_to_trigger_core_probability_sum": 5.36303e-07,
+      "extension_side": "5prime",
+      "extension_5prime_length": 2,
+      "extension_3prime_length": 0,
+      "rank_within_length": 1,
+      "reference_pairs": [
+        {
+          "reference_position_a": 5,
+          "reference_position_b": 12,
+          "aptamer_index": 5,
+          "trigger_index": 4,
+          "reference_probability": 0.442223478986,
+          "candidate_probability": 0.439894079594
+        },
+        {
+          "reference_position_a": 6,
+          "reference_position_b": 11,
+          "aptamer_index": 6,
+          "trigger_index": 3,
+          "reference_probability": 0.497986966303,
+          "candidate_probability": 0.495364249654
+        },
+        {
+          "reference_position_a": 7,
+          "reference_position_b": 10,
+          "aptamer_index": 7,
+          "trigger_index": 2,
+          "reference_probability": 0.498195097407,
+          "candidate_probability": 0.4955251099
+        },
+        {
+          "reference_position_a": 8,
+          "reference_position_b": 9,
+          "aptamer_index": 8,
+          "trigger_index": 1,
+          "reference_probability": 0.44364022659,
+          "candidate_probability": 0.439078729466
+        }
+      ],
+      "nucleotide_probabilities": [
+        0.5544802175114748,
+        0.4996836953994084,
+        0.4999257804813175,
+        0.5548550837696093,
+        0.43989407959379756,
+        0.4953642496544973,
+        0.4955251098999163,
+        0.4390787294657345,
+        0.9979010607610072,
+        0.9917974376163563,
+        0.4390787294657345,
+        0.4955251098999163,
+        0.4953642496544973,
+        0.43989407959379756
+      ],
+      "extension_base_probabilities": [
+        {
+          "extension_index": 1,
+          "base": "A",
+          "side": "5prime",
+          "trigger_index": 1,
+          "paired_probability": 0.002098939239
+        },
+        {
+          "extension_index": 2,
+          "base": "A",
+          "side": "5prime",
+          "trigger_index": 2,
+          "paired_probability": 0.008202562384
+        }
+      ],
+      "thermodynamics": {
+        "backend": "AptaSwitch-native-hybrid",
+        "version": "abi=1;sha256:fa5ebe6f867592e46dadd3b3afea78faa072424531103dc4e946e7ab10526761",
+        "model": "experimental-Sugimoto95-Vienna04-loopmean",
+        "parameter_digest": "sha256:98eb671acc2ce0c25470011e58303034cb3de42ac7cbf5faabe76d7188a7bde8",
+        "ensemble": "connected-pseudoknot-free;dangles=0;coaxial=0;RNA-WC-GU;DNA-WC;hybrid-WC;min_loop=3;max_interior=30;pf_smooth=1;betaScale=1;RNA-monomer:ViennaRNA-2.7.2;other:connected-DP;minimum-RNA:centikcal-salt-rounded;minimum-other:continuous-PF-weights",
+        "standard_state": "1 M;Na=0.12..1M;published-pair-S69-S75-S90;Mg=0;T=25..55C;native-salt=1.021M;association-S93;uniform-cyclic-labelled-state"
+      }
+    },
+    {
+      "extension_5prime": "C",
+      "extension_length": 1,
+      "trigger_length": 5,
+      "extended_trigger": "CACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630724623,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+.))))",
+      "extension_3prime": "",
+      "rank": 3,
+      "final_score": 24.326191616,
+      "ensemble_free_energy_kcal_mol": -4.198543662,
+      "ensemble_free_energy_delta": -0.004664106,
+      "mfe_structure_probability": 0.388408486204,
+      "target_structure_probability": 0.388408486204,
+      "core_pair_probability_rmse": 0.001458210659,
+      "core_pair_probability_mae": 0.000603237246,
+      "reference_pair_probability_loss": 0.014515963391,
+      "extension_pair_probability_sum": 0.007737935218,
+      "extension_to_aptamer_probability_sum": 0.007737935218,
+      "extension_to_trigger_core_probability_sum": 0.0,
+      "extension_side": "5prime",
+      "extension_5prime_length": 1,
+      "extension_3prime_length": 0,
+      "rank_within_length": 2,
+      "reference_pairs": [
+        {
+          "reference_position_a": 5,
+          "reference_position_b": 12,
+          "aptamer_index": 5,
+          "trigger_index": 4,
+          "reference_probability": 0.442223478986,
+          "candidate_probability": 0.438823849413
+        },
+        {
+          "reference_position_a": 6,
+          "reference_position_b": 11,
+          "aptamer_index": 6,
+          "trigger_index": 3,
+          "reference_probability": 0.497986966303,
+          "candidate_probability": 0.494158493209
+        },
+        {
+          "reference_position_a": 7,
+          "reference_position_b": 10,
+          "aptamer_index": 7,
+          "trigger_index": 2,
+          "reference_probability": 0.498195097407,
+          "candidate_probability": 0.494340096018
+        },
+        {
+          "reference_position_a": 8,
+          "reference_position_b": 9,
+          "aptamer_index": 8,
+          "trigger_index": 1,
+          "reference_probability": 0.44364022659,
+          "candidate_probability": 0.440207367257
+        }
+      ],
+      "nucleotide_probabilities": [
+        0.5532566913896793,
+        0.4983067205698336,
+        0.49832760330714143,
+        0.5539134137089672,
+        0.4388238494129865,
+        0.49415849320857586,
+        0.4943400960175367,
+        0.44020736725655885,
+        0.9922620647818458,
+        0.44020736725655885,
+        0.4943400960175367,
+        0.49415849320857586,
+        0.4388238494129865
+      ],
+      "extension_base_probabilities": [
+        {
+          "extension_index": 1,
+          "base": "C",
+          "side": "5prime",
+          "trigger_index": 1,
+          "paired_probability": 0.007737935218
+        }
+      ],
+      "thermodynamics": {
+        "backend": "AptaSwitch-native-hybrid",
+        "version": "abi=1;sha256:fa5ebe6f867592e46dadd3b3afea78faa072424531103dc4e946e7ab10526761",
+        "model": "experimental-Sugimoto95-Vienna04-loopmean",
+        "parameter_digest": "sha256:98eb671acc2ce0c25470011e58303034cb3de42ac7cbf5faabe76d7188a7bde8",
+        "ensemble": "connected-pseudoknot-free;dangles=0;coaxial=0;RNA-WC-GU;DNA-WC;hybrid-WC;min_loop=3;max_interior=30;pf_smooth=1;betaScale=1;RNA-monomer:ViennaRNA-2.7.2;other:connected-DP;minimum-RNA:centikcal-salt-rounded;minimum-other:continuous-PF-weights",
+        "standard_state": "1 M;Na=0.12..1M;published-pair-S69-S75-S90;Mg=0;T=25..55C;native-salt=1.021M;association-S93;uniform-cyclic-labelled-state"
+      }
+    },
+    {
+      "extension_5prime": "CC",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "CCACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 2,
+      "mfe_energy_kcal_mol": -3.630724623,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": "",
+      "rank": 4,
+      "final_score": 33.401594527,
+      "ensemble_free_energy_kcal_mol": -4.200894992,
+      "ensemble_free_energy_delta": -0.007015435,
+      "mfe_structure_probability": 0.386890406924,
+      "target_structure_probability": 0.386890406924,
+      "core_pair_probability_rmse": 0.00214376414,
+      "core_pair_probability_mae": 0.000887618768,
+      "reference_pair_probability_loss": 0.021778305086,
+      "extension_pair_probability_sum": 0.011618620954,
+      "extension_to_aptamer_probability_sum": 0.011617915888,
+      "extension_to_trigger_core_probability_sum": 7.05066e-07,
+      "extension_side": "5prime",
+      "extension_5prime_length": 2,
+      "extension_3prime_length": 0,
+      "rank_within_length": 2,
+      "reference_pairs": [
+        {
+          "reference_position_a": 5,
+          "reference_position_b": 12,
+          "aptamer_index": 5,
+          "trigger_index": 4,
+          "reference_probability": 0.442223478986,
+          "candidate_probability": 0.437126247054
+        },
+        {
+          "reference_position_a": 6,
+          "reference_position_b": 11,
+          "aptamer_index": 6,
+          "trigger_index": 3,
+          "reference_probability": 0.497986966303,
+          "candidate_probability": 0.492246395846
+        },
+        {
+          "reference_position_a": 7,
+          "reference_position_b": 10,
+          "aptamer_index": 7,
+          "trigger_index": 2,
+          "reference_probability": 0.498195097407,
+          "candidate_probability": 0.492407987211
+        },
+        {
+          "reference_position_a": 8,
+          "reference_position_b": 9,
+          "aptamer_index": 8,
+          "trigger_index": 1,
+          "reference_probability": 0.44364022659,
+          "candidate_probability": 0.438486834089
+        }
+      ],
+      "nucleotide_probabilities": [
+        0.5518546187051846,
+        0.49672664784818965,
+        0.49657052680671676,
+        0.5523574825887332,
+        0.4371262470538759,
+        0.49224639584602814,
+        0.4924079872106673,
+        0.4384868340892573,
+        0.9960915393624028,
+        0.9922898396833181,
+        0.4384868340892573,
+        0.4924079872106673,
+        0.49224639584602814,
+        0.4371262470538759
+      ],
+      "extension_base_probabilities": [
+        {
+          "extension_index": 1,
+          "base": "C",
+          "side": "5prime",
+          "trigger_index": 1,
+          "paired_probability": 0.003908460638
+        },
+        {
+          "extension_index": 2,
+          "base": "C",
+          "side": "5prime",
+          "trigger_index": 2,
+          "paired_probability": 0.007710160317
+        }
+      ],
+      "thermodynamics": {
+        "backend": "AptaSwitch-native-hybrid",
+        "version": "abi=1;sha256:fa5ebe6f867592e46dadd3b3afea78faa072424531103dc4e946e7ab10526761",
+        "model": "experimental-Sugimoto95-Vienna04-loopmean",
+        "parameter_digest": "sha256:98eb671acc2ce0c25470011e58303034cb3de42ac7cbf5faabe76d7188a7bde8",
+        "ensemble": "connected-pseudoknot-free;dangles=0;coaxial=0;RNA-WC-GU;DNA-WC;hybrid-WC;min_loop=3;max_interior=30;pf_smooth=1;betaScale=1;RNA-monomer:ViennaRNA-2.7.2;other:connected-DP;minimum-RNA:centikcal-salt-rounded;minimum-other:continuous-PF-weights",
+        "standard_state": "1 M;Na=0.12..1M;published-pair-S69-S75-S90;Mg=0;T=25..55C;native-salt=1.021M;association-S93;uniform-cyclic-labelled-state"
+      }
+    }
+  ],
+  "curves": {
+    "mfe_progress": [
+      {
+        "screened": 1,
+        "target_length": 5,
+        "best_group_count": 1,
+        "best_key": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "screened": 4,
+        "target_length": 5,
+        "best_group_count": 3,
+        "best_key": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "screened": 20,
+        "target_length": 6,
+        "best_group_count": 11,
+        "best_key": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "ensemble_progress": [
+      {
+        "analyzed": 1,
+        "trigger_length": 5,
+        "final_score": 19.552715675,
+        "core_pair_probability_rmse": 0.00094214549,
+        "reference_pair_probability_loss": 0.010252163857,
+        "extension_pair_probability_sum": 0.00820024624
+      },
+      {
+        "analyzed": 2,
+        "trigger_length": 5,
+        "final_score": 24.326191616,
+        "core_pair_probability_rmse": 0.001458210659,
+        "reference_pair_probability_loss": 0.014515963391,
+        "extension_pair_probability_sum": 0.007737935218
+      },
+      {
+        "analyzed": 3,
+        "trigger_length": 5,
+        "final_score": 47.504293502,
+        "core_pair_probability_rmse": 0.003350355785,
+        "reference_pair_probability_loss": 0.032936619559,
+        "extension_pair_probability_sum": 0.017501296153
+      },
+      {
+        "analyzed": 4,
+        "trigger_length": 6,
+        "final_score": 22.202902065,
+        "core_pair_probability_rmse": 0.001101485268,
+        "reference_pair_probability_loss": 0.012183600672,
+        "extension_pair_probability_sum": 0.010301501623
+      },
+      {
+        "analyzed": 5,
+        "trigger_length": 6,
+        "final_score": 176.928204958,
+        "core_pair_probability_rmse": 0.012383246592,
+        "reference_pair_probability_loss": 0.12430976708,
+        "extension_pair_probability_sum": 0.125310979314
+      },
+      {
+        "analyzed": 6,
+        "trigger_length": 6,
+        "final_score": 51.030739678,
+        "core_pair_probability_rmse": 0.003486609639,
+        "reference_pair_probability_loss": 0.035565276836,
+        "extension_pair_probability_sum": 0.020386732457
+      },
+      {
+        "analyzed": 7,
+        "trigger_length": 6,
+        "final_score": 33.529888214,
+        "core_pair_probability_rmse": 0.001911534721,
+        "reference_pair_probability_loss": 0.021535129507,
+        "extension_pair_probability_sum": 0.014230892139
+      },
+      {
+        "analyzed": 8,
+        "trigger_length": 6,
+        "final_score": 33.401594527,
+        "core_pair_probability_rmse": 0.00214376414,
+        "reference_pair_probability_loss": 0.021778305086,
+        "extension_pair_probability_sum": 0.011618620954
+      },
+      {
+        "analyzed": 9,
+        "trigger_length": 6,
+        "final_score": 211.89511217,
+        "core_pair_probability_rmse": 0.016579827599,
+        "reference_pair_probability_loss": 0.163168253769,
+        "extension_pair_probability_sum": 0.08929277354
+      },
+      {
+        "analyzed": 10,
+        "trigger_length": 6,
+        "final_score": 98.092572614,
+        "core_pair_probability_rmse": 0.007239628167,
+        "reference_pair_probability_loss": 0.07338174762,
+        "extension_pair_probability_sum": 0.039018794064
+      },
+      {
+        "analyzed": 11,
+        "trigger_length": 6,
+        "final_score": 584.273912749,
+        "core_pair_probability_rmse": 0.048112026682,
+        "reference_pair_probability_loss": 0.458362050782,
+        "extension_pair_probability_sum": 0.243547700072
+      },
+      {
+        "analyzed": 12,
+        "trigger_length": 6,
+        "final_score": 41.97785785,
+        "core_pair_probability_rmse": 0.002479178749,
+        "reference_pair_probability_loss": 0.027383201502,
+        "extension_pair_probability_sum": 0.021863729216
+      },
+      {
+        "analyzed": 13,
+        "trigger_length": 6,
+        "final_score": 35.277954436,
+        "core_pair_probability_rmse": 0.002229398844,
+        "reference_pair_probability_loss": 0.02335559743,
+        "extension_pair_probability_sum": 0.012440004183
+      },
+      {
+        "analyzed": 14,
+        "trigger_length": 6,
+        "final_score": 57.903304401,
+        "core_pair_probability_rmse": 0.00406075045,
+        "reference_pair_probability_loss": 0.04134863195,
+        "extension_pair_probability_sum": 0.021972998306
+      }
+    ],
+    "ranking": [
+      {
+        "rank": 1,
+        "trigger_length": 5,
+        "extension_5prime": "A",
+        "extension_3prime": "",
+        "final_score": 19.552715675,
+        "core_pair_probability_rmse": 0.00094214549,
+        "reference_pair_probability_loss": 0.010252163857,
+        "extension_pair_probability_sum": 0.00820024624
+      },
+      {
+        "rank": 2,
+        "trigger_length": 6,
+        "extension_5prime": "AA",
+        "extension_3prime": "",
+        "final_score": 22.202902065,
+        "core_pair_probability_rmse": 0.001101485268,
+        "reference_pair_probability_loss": 0.012183600672,
+        "extension_pair_probability_sum": 0.010301501623
+      },
+      {
+        "rank": 3,
+        "trigger_length": 5,
+        "extension_5prime": "C",
+        "extension_3prime": "",
+        "final_score": 24.326191616,
+        "core_pair_probability_rmse": 0.001458210659,
+        "reference_pair_probability_loss": 0.014515963391,
+        "extension_pair_probability_sum": 0.007737935218
+      },
+      {
+        "rank": 4,
+        "trigger_length": 6,
+        "extension_5prime": "CC",
+        "extension_3prime": "",
+        "final_score": 33.401594527,
+        "core_pair_probability_rmse": 0.00214376414,
+        "reference_pair_probability_loss": 0.021778305086,
+        "extension_pair_probability_sum": 0.011618620954
+      }
+    ]
+  },
+  "warnings": [],
+  "thermodynamics": {
+    "backend": "AptaSwitch-native-hybrid",
+    "version": "abi=1;sha256:fa5ebe6f867592e46dadd3b3afea78faa072424531103dc4e946e7ab10526761",
+    "model": "experimental-Sugimoto95-Vienna04-loopmean",
+    "parameter_digest": "sha256:98eb671acc2ce0c25470011e58303034cb3de42ac7cbf5faabe76d7188a7bde8",
+    "ensemble": "connected-pseudoknot-free;dangles=0;coaxial=0;RNA-WC-GU;DNA-WC;hybrid-WC;min_loop=3;max_interior=30;pf_smooth=1;betaScale=1;RNA-monomer:ViennaRNA-2.7.2;other:connected-DP;minimum-RNA:centikcal-salt-rounded;minimum-other:continuous-PF-weights",
+    "standard_state": "1 M;Na=0.12..1M;published-pair-S69-S75-S90;Mg=0;T=25..55C;native-salt=1.021M;association-S93;uniform-cyclic-labelled-state"
+  },
+  "mfe_survivors": [
+    {
+      "extension_5prime": "A",
+      "extension_length": 1,
+      "trigger_length": 5,
+      "extended_trigger": "AACGT",
+      "gc_fraction": 0.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+.))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "C",
+      "extension_length": 1,
+      "trigger_length": 5,
+      "extended_trigger": "CACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+.))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "G",
+      "extension_length": 1,
+      "trigger_length": 5,
+      "extended_trigger": "GACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+.))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "AA",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "AAACGT",
+      "gc_fraction": 0.0,
+      "longest_homopolymer": 2,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "AC",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "ACACGT",
+      "gc_fraction": 0.5,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "AG",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "AGACGT",
+      "gc_fraction": 0.5,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "CA",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "CAACGT",
+      "gc_fraction": 0.5,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "CC",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "CCACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 2,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "GA",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "GAACGT",
+      "gc_fraction": 0.5,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "GC",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "GCACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "GG",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "GGACGT",
+      "gc_fraction": 1.0,
+      "longest_homopolymer": 2,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "TA",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "TAACGT",
+      "gc_fraction": 0.0,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "TC",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "TCACGT",
+      "gc_fraction": 0.5,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    },
+    {
+      "extension_5prime": "TG",
+      "extension_length": 2,
+      "trigger_length": 6,
+      "extended_trigger": "TGACGT",
+      "gc_fraction": 0.5,
+      "longest_homopolymer": 1,
+      "mfe_energy_kcal_mol": -3.630725,
+      "mfe_energy_delta": 0.0,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "mfe_structure": "....((((+..))))",
+      "extension_3prime": ""
+    }
+  ],
+  "elapsed_seconds": 0.365,
+  "run_id": "extension_native_fixture",
+  "started_at": "2026-10-30T16:37:57.407250+00:00",
+  "completed_at": "2026-10-30T16:37:57.772755+00:00",
+  "request": {
+    "molecule_name": "Système personnalisé de test"
+  },
+  "fixture_provenance": {
+    "kind": "recorded-current-native-technical-fixture",
+    "generated_at": "2026-10-30T16:37:57.772755+00:00",
+    "scope": "Short DNA/DNA extension fixture for portable UI and persistence tests; not biological validation. Newly calculated for this cleanup, independent of previous fixtures.",
+    "application_source_sha256": "2905de9a83d02441c3525b7e427ca5e2b56ef9d291093be765a2df6ec633fd9a",
+    "runtime_sha256": "fa5ebe6f867592e46dadd3b3afea78faa072424531103dc4e946e7ab10526761",
+    "runtime_provenance": {
+      "backend": "AptaSwitch-native-hybrid",
+      "version": "abi=1;sha256:fa5ebe6f867592e46dadd3b3afea78faa072424531103dc4e946e7ab10526761",
+      "model": "experimental-Sugimoto95-Vienna04-loopmean",
+      "parameter_digest": "sha256:98eb671acc2ce0c25470011e58303034cb3de42ac7cbf5faabe76d7188a7bde8",
+      "ensemble": "connected-pseudoknot-free;dangles=0;coaxial=0;RNA-WC-GU;DNA-WC;hybrid-WC;min_loop=3;max_interior=30;pf_smooth=1;betaScale=1;RNA-monomer:ViennaRNA-2.7.2;other:connected-DP;minimum-RNA:centikcal-salt-rounded;minimum-other:continuous-PF-weights",
+      "standard_state": "1 M;Na=0.12..1M;published-pair-S69-S75-S90;Mg=0;T=25..55C;native-salt=1.021M;association-S93;uniform-cyclic-labelled-state"
+    },
+    "inputs": {
+      "aptamer_dna": "ACGTACGT",
+      "trigger_dna": "ACGT",
+      "target_lengths": [
+        5,
+        6
+      ],
+      "top_per_length": 2
+    }
+  }
+}

@@ -1,0 +1,74 @@
+Apta2Switch-Studio Source License
+Version 1.0, 21 October 2026
+ViennaRNA-style redistribution terms for Apta2Switch-Studio's own code
+
+SPDX-License-Identifier: LicenseRef-Apta2Switch-Source
+
+Copyright (c) 2026 iGEM Sorbonne University team
+Created by Fahy Alexis, a member of the iGEM Sorbonne University 2026 team
+(Science & Dry Lab), and contributors.
+
+1. Scope
+
+This license applies to the original Apta2Switch-Studio code and documentation
+in this release, except material carrying a different license or copyright
+notice. It is a custom license issued by the Apta2Switch-Studio copyright
+holders. It is not the ViennaRNA license and does not grant rights on behalf
+of ViennaRNA, OSTIR, oxDNA or any other third party.
+
+2. Permission and redistribution conditions
+
+Permission is granted to use, copy and modify the covered material for
+research, educational and commercial purposes, and to redistribute original
+or modified copies in source or binary form, provided that:
+
+(a) Redistribution of the covered material, including derived versions,
+is free of charge. Only the actual cost of a physical distribution medium
+may be recovered; distribution by download must be free of charge.
+
+(b) This license, the applicable copyright notices and the attribution to
+Fahy Alexis and the iGEM Sorbonne University 2026 team are retained in source
+copies. For binary copies they must be reproduced in the accompanying
+materials in a form recipients can read.
+
+(c) Modified versions are identified as modified, with the date and author
+of the changes. The covered material and modifications derived from it
+remain subject to these redistribution and attribution conditions.
+
+(d) All applicable third-party licenses, copyright notices and attributions
+are preserved and respected. This license does not permit replacing those
+licenses, imposing these conditions on a third-party work, or overriding
+that work's redistribution requirements.
+
+Distribution for a fee beyond the physical-media cost requires separate
+written permission from the relevant copyright holders. Permission for
+commercial use does not itself authorize such paid redistribution.
+
+3. Earlier MIT releases and third-party components
+
+Rights already granted for material received under an earlier MIT release
+remain valid. Its original notice is retained in LICENSES/MIT-legacy.txt.
+This license does not withdraw those permissions from copies already
+received under MIT.
+
+Third-party components retain their own licenses, as recorded in
+THIRD_PARTY_NOTICES.md and the accompanying sources. In particular,
+ViennaRNA retains its own redistribution terms, and OSTIR and oxDNA retain
+their GNU GPL licenses. This license is not an exception to those licenses.
+No compatibility of a combined distribution is implied merely by including
+the works, their sources or their notices together.
+
+4. No warranty
+
+THE COVERED MATERIAL IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY LAW,
+THE COPYRIGHT HOLDERS ARE NOT LIABLE FOR ANY CLAIM, DAMAGE OR OTHER
+LIABILITY ARISING FROM THE MATERIAL OR ITS USE.
+
+5. Name and status
+
+LicenseRef-Apta2Switch-Source identifies this project's custom license; it
+is not a standard SPDX-listed license or an OSI approval. This license
+adopts a restriction on paid redistribution similar to ViennaRNA's terms,
+without claiming to be issued, endorsed or approved by ViennaRNA's authors.

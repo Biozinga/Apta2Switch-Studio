@@ -1,0 +1,11 @@
+include LICENSE THIRD_PARTY_NOTICES.md README.md pyproject.toml .gitignore .gitattributes
+include requirements-constraints.txt UPSTREAM-SOURCES.json
+include .streamlit/config.toml
+recursive-include vendor/licenses *.txt
+recursive-include LICENSES *.txt
+recursive-include src/aptaswitch_core/thermodynamics/native *.cpp *.hpp
+recursive-include scripts *.py *.sh *.ps1
+recursive-include packaging *.py *.spec *.txt *.json *.patch *.S *.md *.png *.icns *.svg *.plist
+recursive-include tests *.py *.json *.cpp *.hpp
+recursive-include .github/workflows *.yml
+global-exclude __pycache__ *.py[cod] .DS_Store .env .env.*

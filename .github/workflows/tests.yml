@@ -1,0 +1,38 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+  workflow_call: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: ${{ github.workspace }}/tests
+      APTASWITCH_HYBRID_NATIVE_LIBRARY: ${{ github.workspace }}/.local_deps/thermodynamics/libaptaswitch_hybrid.so
+      APTASWITCH_VIENNA_OFF_LIBRARY: ${{ github.workspace }}/.local_deps/thermodynamics/libaptaswitch_hybrid.so
+      APTASWITCH_DP_FIXTURE_LIBRARY: ${{ github.workspace }}/.local_deps/native-test-fixture.so
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install application
+        run: python -m pip install -e .
+      - name: Build the pinned native RNA/DNA runtime
+        run: python scripts/prepare_thermodynamics_runtime.py
+      - name: Build the native regression fixture
+        run: python tests/native_reference/build_connected_native.py --output .local_deps/native-test-fixture.so --check-factory
+      - name: Exercise native design and analysis routing
+        run: python -m unittest tests.test_native_design_workflow tests.test_native_analysis_runtime
+      - name: Run tests
+        run: python -m unittest discover -s tests

@@ -1,0 +1,30 @@
+Apta2Switch Studio — Windows x64 (Windows 10 2004+ / Windows 11)
+
+1. Extract the ENTIRE ZIP to a writable folder such as Documents.
+2. Double-click Apta2Switch-Studio.exe. Keep _internal and runtime beside it.
+3. Click Open application. On first use, Prepare Windows installs Microsoft's
+   WSL2 and Ubuntu 22.04, or converts that Ubuntu installation from WSL1 to WSL2.
+   This preparation needs Internet, Windows administrator approval, hardware
+   virtualization, and sometimes a restart. Back up an existing WSL1 Ubuntu
+   before conversion. No terminal commands are required for this setup.
+4. Reopen the launcher after any restart and click Open application.
+
+The scientific app uses the included Linux application under WSL2. Python,
+the experimental native RNA/DNA thermodynamic engine, and the app's scientific
+dependencies are included in that payload. Ubuntu 22.04 provides the Python 3
+bootstrap utility. The RNA/DNA engine and oxDNA/oxpy with mixed DNA–RNA
+modelNA parameters are included. No external scientific
+installation or model selection is required.
+
+Projects and settings are kept on the Linux filesystem across app updates.
+Use the app's Open folder controls to browse them in Windows Explorer, or open:
+\\wsl.localhost\Ubuntu-22.04\home\aptaswitch-studio\Apta2Switch-Studio
+
+Closing this launcher or the browser does not stop a calculation. Stopping
+WSL, shutting down Windows, or unregistering Ubuntu does interrupt it; saved
+checkpoints remain available unless that Ubuntu distribution is deleted.
+Never unregister Ubuntu to update this app: that deletes its files.
+
+This beta launcher is not Authenticode-signed. Windows SmartScreen can show an
+unrecognized-app warning. Verify the download's source before approving it.
+An unsigned beta cannot promise warning-free installation on every computer.

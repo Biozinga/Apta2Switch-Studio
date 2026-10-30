@@ -1,0 +1,139 @@
+{
+  "provenance": {
+    "source": "design_z1_5prime_extension.py, original trigger-extension program",
+    "source_sha256": "b8c8a359d22ebf9582949f36dbee580aea2c3e8f3992002879587a19c701d44c",
+    "method": "Expected values evaluated by the original program before removing its unused source copy."
+  },
+  "mfe_cases": [
+    {
+      "structure": "((+..))",
+      "candidate": {
+        "extension_5prime": "AC",
+        "extension_length": 2,
+        "trigger_length": 4,
+        "extended_z1": "ACGT",
+        "gc_fraction": 0.5,
+        "longest_homopolymer": 1,
+        "mfe_energy_kcal_mol": -3.1,
+        "mfe_energy_delta": 0.1,
+        "mfe_core_hamming_distance": 0,
+        "mfe_padded_hamming_distance": 0,
+        "missing_reference_mfe_pairs": 0,
+        "new_core_mfe_pairs": 0,
+        "extension_mfe_pairs": 0,
+        "extension_unpaired_fraction_mfe": 1.0,
+        "mfe_structure": "((+..))"
+      },
+      "rank_key": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "structure": "(.+..).",
+      "candidate": {
+        "extension_5prime": "AC",
+        "extension_length": 2,
+        "trigger_length": 4,
+        "extended_z1": "ACGT",
+        "gc_fraction": 0.5,
+        "longest_homopolymer": 1,
+        "mfe_energy_kcal_mol": -3.1,
+        "mfe_energy_delta": 0.1,
+        "mfe_core_hamming_distance": 2,
+        "mfe_padded_hamming_distance": 2,
+        "missing_reference_mfe_pairs": 2,
+        "new_core_mfe_pairs": 1,
+        "extension_mfe_pairs": 0,
+        "extension_unpaired_fraction_mfe": 1.0,
+        "mfe_structure": "(.+..)."
+      },
+      "rank_key": [
+        2,
+        2,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "structure": "((+()))",
+      "candidate": {
+        "extension_5prime": "AC",
+        "extension_length": 2,
+        "trigger_length": 4,
+        "extended_z1": "ACGT",
+        "gc_fraction": 0.5,
+        "longest_homopolymer": 1,
+        "mfe_energy_kcal_mol": -3.1,
+        "mfe_energy_delta": 0.1,
+        "mfe_core_hamming_distance": 0,
+        "mfe_padded_hamming_distance": 2,
+        "missing_reference_mfe_pairs": 0,
+        "new_core_mfe_pairs": 0,
+        "extension_mfe_pairs": 1,
+        "extension_unpaired_fraction_mfe": 0.5,
+        "mfe_structure": "((+()))"
+      },
+      "rank_key": [
+        0,
+        0,
+        1,
+        0,
+        2
+      ]
+    }
+  ],
+  "ensemble_case": {
+    "candidate": {
+      "rank": 0,
+      "final_score": 161.009391388,
+      "extension_5prime": "A",
+      "extension_length": 1,
+      "trigger_length": 3,
+      "extended_z1": "AGT",
+      "gc_fraction": 0.0,
+      "longest_homopolymer": 1,
+      "mfe_structure": "((+.))",
+      "mfe_energy_kcal_mol": -3.1,
+      "mfe_energy_delta": 0.1,
+      "ensemble_free_energy_kcal_mol": -3.45,
+      "ensemble_free_energy_delta": 0.05,
+      "mfe_structure_probability": 0.55,
+      "target_structure_probability": 0.55,
+      "mfe_core_hamming_distance": 0,
+      "mfe_padded_hamming_distance": 0,
+      "missing_reference_mfe_pairs": 0,
+      "new_core_mfe_pairs": 0,
+      "extension_mfe_pairs": 0,
+      "extension_unpaired_fraction_mfe": 1.0,
+      "core_pair_probability_rmse": 0.033071891388,
+      "core_pair_probability_mae": 0.021875,
+      "reference_pair_probability_loss": 0.1,
+      "extension_pair_probability_sum": 0.05,
+      "extension_to_z0_probability_sum": 0.05,
+      "extension_to_z1_core_probability_sum": 0.0
+    },
+    "rank_key": [
+      161.009391388,
+      0.1,
+      0.033071891388,
+      0.021875,
+      0.05,
+      0.05,
+      0.0,
+      -0.55,
+      0,
+      0,
+      0,
+      0,
+      0.05,
+      0.1,
+      3,
+      "A"
+    ]
+  }
+}

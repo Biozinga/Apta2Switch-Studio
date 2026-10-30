@@ -1,0 +1,162 @@
+name: Build Beta 2 applications
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      macos_signing:
+        description: 'macOS: local unsigned build or notarized public build'
+        type: choice
+        options: [local, release]
+        default: local
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    uses: ./.github/workflows/tests.yml
+
+  build:
+    needs: tests
+    env:
+      APTASWITCH_MACOS_SIGNING: ${{ startsWith(github.ref, 'refs/tags/') && 'release' || inputs.macos_signing || 'local' }}
+      APTASWITCH_MACOS_SIGN_IDENTITY: ${{ vars.APTASWITCH_MACOS_SIGN_IDENTITY }}
+      APTASWITCH_MACOS_NOTARY_PROFILE: aptaswitch-notary
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            script: scripts/build_macos.sh
+            artifact: Apta2Switch-Studio-macos-arm64
+            file: dist/Apta2Switch-Studio-macos-arm64*.zip
+          - runner: macos-15-intel
+            script: scripts/build_macos.sh
+            artifact: Apta2Switch-Studio-macos-x64
+            file: dist/Apta2Switch-Studio-macos-x64*.zip
+          - runner: ubuntu-22.04
+            script: scripts/build_linux.sh
+            artifact: Apta2Switch-Studio-linux-x64
+            file: dist/Apta2Switch-Studio-linux-x64.tar.gz
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Check release version
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os, tomllib
+          with open("pyproject.toml", "rb") as f:
+              version = tomllib.load(f)["project"]["version"]
+          expected = "v" + version.replace("b", "-beta.")
+          assert os.environ["GITHUB_REF_NAME"] == expected, (os.environ["GITHUB_REF_NAME"], expected)
+          PY
+      - name: Import the temporary Apple signing keychain
+        if: runner.os == 'macOS' && env.APTASWITCH_MACOS_SIGNING == 'release'
+        env:
+          APPLE_CERTIFICATE_P12_BASE64: ${{ secrets.APPLE_CERTIFICATE_P12_BASE64 }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+        run: python scripts/macos_ci_keychain.py prepare
+      - name: Build native CPU runtimes and check the standalone application
+        shell: bash
+        run: bash "${{ matrix.script }}"
+      - name: Remove the temporary Apple signing keychain
+        if: always() && runner.os == 'macOS' && env.APTASWITCH_MACOS_SIGNING == 'release'
+        run: python scripts/macos_ci_keychain.py cleanup
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: |
+            ${{ matrix.file }}
+          if-no-files-found: error
+          retention-days: 14
+
+  windows:
+    needs: [tests, build]
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: x64
+      - uses: actions/download-artifact@v4
+        with:
+          name: Apta2Switch-Studio-linux-x64
+          path: linux-backend
+      - name: Build and exercise the actual frozen Windows launcher
+        shell: pwsh
+        run: ./scripts/build_windows.ps1 -BackendArchive linux-backend/Apta2Switch-Studio-linux-x64.tar.gz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Apta2Switch-Studio-windows-x64
+          path: dist/Apta2Switch-Studio-windows-x64.zip
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [tests, build, windows]
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+      - name: Publish Beta 2 only after every application check succeeds
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          cat > "$RUNNER_TEMP/release-notes.md" <<'NOTES'
+          # Apta2Switch-Studio — Beta 2
+
+          Download the file for your computer and extract it. Open the **Apta2Switch-Studio** folder, then double-click the application inside. The interface opens in your browser. No Python installation or terminal commands are needed.
+
+          Keep the complete extracted folder together. The application includes its scientific engines; no external engine installation or model selection is needed. Named projects are saved in **designs** and standalone exports in **runs**.
+
+          | Computer | Download |
+          | --- | --- |
+          | Mac with Apple silicon (M1, M2, M3, M4, …) | `Apta2Switch-Studio-macos-arm64.zip` |
+          | Mac with an Intel processor | `Apta2Switch-Studio-macos-x64.zip` |
+          | Linux x64 (Ubuntu 22.04 or newer) | `Apta2Switch-Studio-linux-x64.tar.gz` |
+          | Windows 10/11 x64 (WSL2) | `Apta2Switch-Studio-windows-x64.zip` |
+
+          **macOS:** public downloads are Developer ID signed, notarized and include the stapled ticket. Local development archives are explicitly named `local-unsigned` and can still require a manual Gatekeeper override; they are not published by this release job.
+
+          **Windows:** extract the entire Windows ZIP and open `Apta2Switch-Studio.exe`. The launcher includes the Linux scientific application and guides first-time WSL2/Ubuntu 22.04 setup. That initial Windows setup needs Internet, administrator approval, virtualization support, and sometimes a restart. No Python installation or terminal commands are required for the app. The complete Linux scientific payload is included. Windows projects live in the dedicated Linux account and remain available through Explorer across application updates. The beta launcher is not Authenticode-signed; Windows can still show a SmartScreen warning.
+
+          **Native RNA/DNA thermodynamics are included.** New designs and analyses use the experimental Sugimoto95/Vienna04 loop-mean model, with explicit RNA and DNA strands. Its binary, parameter provenance and notices ship with the application. The model supports 25–55 °C, Na⁺ 0.12–1 M and Mg²⁺ = 0. Hybrid loop parameters remain approximations, and rankings do not establish experimental performance.
+
+          **oxDNA is included offline.** The oxDNA/oxpy CPU engine includes DNA, RNA and mixed modelNA parameters, physical force checks and native FFS stopping conditions.
+
+          **Licences and sources:** the application contains the ViennaRNA notices, GPLv3 oxDNA licence, and the exact oxDNA source archive with build instructions, repair and worker source files. These sources travel with each platform's executable, including the Linux payload in the Windows package.
+
+          **Interactive molecular view:** oxDNA trajectories use the included offline 3Dmol viewer. The Licences page identifies the scientific models and acknowledgements.
+
+          The interface is available in English and French. This prerelease supports activator toehold design, trigger extension, and saved runs. The build checks imports, native hybrid thermodynamics, PNG/Excel export, bundled oxDNA, and all main pages in both languages. Design exports retain each optimizer seed, budget, achieved defect and stopping condition.
+          NOTES
+          gh release create "$GITHUB_REF_NAME" \
+            artifacts/Apta2Switch-Studio-macos-arm64.zip \
+            artifacts/Apta2Switch-Studio-macos-x64.zip \
+            artifacts/Apta2Switch-Studio-linux-x64.tar.gz \
+            artifacts/Apta2Switch-Studio-windows-x64.zip \
+            --verify-tag --title "Beta 2" --prerelease \
+            --notes-file "$RUNNER_TEMP/release-notes.md"

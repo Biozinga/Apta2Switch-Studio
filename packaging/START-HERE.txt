@@ -1,0 +1,32 @@
+Apta2Switch-Studio — Start here
+
+1. Keep this complete folder somewhere writable, for example Documents.
+   Move the whole Apta2Switch-Studio folder when moving the application.
+
+2. Open Apta2Switch-Studio.app on Mac or Apta2Switch-Studio on Linux.
+   The interface opens in your browser. The application includes Python.
+   Local unsigned builds are not Developer ID signed or notarized. They may
+   require System Settings → Privacy & Security → Open Anyway on macOS.
+
+3. RNA/DNA thermodynamics and oxDNA simulations
+   are included and available offline. No engine folder, model download or
+   dependency validation is required. A damaged installation produces an
+   explicit error; restore the complete application folder to repair it.
+
+4. Named projects are saved in designs beside the application. Standalone
+   exports use runs. Choose English or French in Settings → Language.
+
+5. Settings → Licences and acknowledgements describes the scientific tools.
+   The bundled oxDNA payload contains the GPLv3 licence, exact upstream source
+   archive, repair, build instructions and Python workers. OSTIR sources and
+   its GPLv3-or-later licence, ViennaRNA notices and the offline molecular
+   viewer notices are also included. The application source uses the custom
+   Apta2Switch-Studio Source License (LicenseRef-Apta2Switch-Source), permitting
+   use and modification including commercial use, with free redistribution
+   except physical-media costs and retained attribution and notices. The
+   earlier MIT notice remains preserved. Third-party licences stay in force;
+   this does not resolve GPL/ViennaRNA compatibility for combined distribution.
+
+Scientific predictions are model-dependent. Hybrid loop parameters remain
+approximations; rankings do not establish
+experimental performance or an induction ratio.

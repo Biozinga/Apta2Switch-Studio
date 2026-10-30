@@ -1,0 +1,61 @@
+{
+  "format": "aptaswitch-angenent-mlp-reference",
+  "version": 1,
+  "source_repository": "https://github.com/lrsoenksen/CL_RNA_SynthBio",
+  "source_revision": "b94078f8c859d6044b6bfbe22b4c6005921d5a71",
+  "model_path": "models/pre-trained/model_MLP_OneHot_Regression_148nt.h5",
+  "model_sha256": "8094bd9ba99b1dfd15c74285f1bd614ea0814d6935b3174fb674885b02bfb9a4",
+  "generator": {
+    "framework": "Keras",
+    "version": "3.15.1",
+    "backend": "numpy",
+    "numpy_version": "2.4.6",
+    "method": "keras.models.load_model(model_path, compile=False); model(one_hot_float32[None, ...], training=False)",
+    "channel_order": "ACGT",
+    "output_names": [
+      "ON",
+      "OFF",
+      "ON_OFF"
+    ],
+    "generated_at": "2026-09-30",
+    "notes": "Expected values obtained independently of the application implementation; no model weights are included. The first sequence is reconstructed from the original preprocessing notebook displayed dataset row0. Random controls use numpy.random.default_rng(4242)."
+  },
+  "cases": [
+    {
+      "sequence": "GGGAACTGTTTTCCATTTTTTTTTTTTTTTTTTAACCAAACACACAAACGCACAAAAAAAAAAAAAAAAAATGGAAAACAGTTAACAGAGGAGAAACTGTATGCCATTTTTTAACCTGGCGGCAGCGCAAAAGATGCGTAAAGGAGAA",
+      "expected": [
+        0.6933836340904236,
+        0.7964598536491394,
+        0.5440264344215393
+      ],
+      "name": "authors_dataset_first_example"
+    },
+    {
+      "sequence": "ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+      "expected": [
+        0.43734219670295715,
+        0.34598809480667114,
+        0.4894064664840698
+      ],
+      "name": "acgt_repeat"
+    },
+    {
+      "sequence": "CTTGAAGATCAAACTATGTTACGTGGGGAGTTCTAGTACTGGCCCATTGTACGTCGCAGCAACCCTTGGCGAGCGGATGCAACGATCCGCTGGTCGTTTAGCAAATAATGATATAAACAGAAAGCCGCAGCTTGGGATTTCGAAAGGG",
+      "expected": [
+        0.5929004549980164,
+        0.6203027367591858,
+        0.5552739500999451
+      ],
+      "name": "random_seed_4242_sample_0"
+    },
+    {
+      "sequence": "GCAGACCCTATGTACAGCTTTAGGGATACAGTACTAGCTCGATGACAGTCGTTCAGTGCATAAATTCTGAGCTCCGCAGTAAACCGAGCCTCTCTTCGCGCGTGGCATTGGGATTGACCCCACTAATGGCGCACTTTACTACGTCGCG",
+      "expected": [
+        0.18681780993938446,
+        0.21855449676513672,
+        0.3104073405265808
+      ],
+      "name": "random_seed_4242_sample_1"
+    }
+  ]
+}

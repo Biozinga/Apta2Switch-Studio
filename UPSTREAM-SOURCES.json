@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "upstream": [
+    {
+      "license": "ViennaRNA custom license",
+      "license_path": "vendor/licenses/ViennaRNA-LICENSE.txt",
+      "name": "ViennaRNA",
+      "sha256": "1ab5f4a4f76fc85a2243546088e45f5d85f2d7a56cc656e969b005cce9bfab5f",
+      "url": "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_7_x/ViennaRNA-2.7.2.tar.gz",
+      "version": "2.7.2"
+    },
+    {
+      "license": "GPL-3.0",
+      "license_path": "vendor/licenses/oxDNA-LICENSE.txt",
+      "name": "oxDNA",
+      "sha256": "29e7780829ee967046168e55851a1e51017c6f37daeed3b8550b8d855704c878",
+      "url": "https://codeload.github.com/lorenzo-rovigatti/oxDNA/tar.gz/75ae96f063954b2f29524bb897c274aee7ba4466",
+      "version": "75ae96f063954b2f29524bb897c274aee7ba4466"
+    },
+    {
+      "license": "GPL-3.0-or-later",
+      "license_path": "vendor/licenses/OSTIR-LICENSE.txt",
+      "name": "OSTIR",
+      "sha256": "6fa38a4e867c8d38aab16b59addc07ce2de03ee766ef6018c24c7a78ff163e14",
+      "url": "https://files.pythonhosted.org/packages/source/o/ostir/ostir-1.1.3.tar.gz",
+      "version": "1.1.3"
+    }
+  ]
+}

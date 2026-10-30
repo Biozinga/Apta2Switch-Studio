@@ -1,0 +1,34 @@
+.venv/
+.build-venv/
+__pycache__/
+*.pyc
+.DS_Store
+build/
+dist/
+*.spec~
+runs/
+/designs/
+*.egg-info/
+
+.local_deps/
+*.whl
+
+# Local credentials and generated archives are never published with the source.
+.env
+.env.*
+!.env.example
+.aws/
+.ssh/
+*.zip
+*.tar.gz
+*.AppImage
+*.app/
+
+# Local links to user-supplied scientific engines, never source or release data.
+/3drna/
+/oxdna
+
+# Generated validation runs; only reviewed reference fixtures are tracked.
+/validation-results/
+.pytest_cache/
+.streamlit/secrets.toml
